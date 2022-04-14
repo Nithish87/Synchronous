@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap');
+
+*{
+  margin: 0;
+  font-family: "Quicksand";
+  color: #333;
+}
+
+.navbar{
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  max-width: 100%;
+  margin: 0 auto;
+  border-bottom: 1px solid #f2f2f2;
+}
+.navbar h1{
+  color: #1d1594;
+  font-size: 50px;
+}
+.navbar .links{
+  margin-left: 60%;
+}
+.navbar a{
+  margin-left: 16px;
+  text-decoration: none;
+  padding: 6px;
+}
+.navbar a:hover{
+  color: #f1356d;
+}
+
+/*CSS for login page*/
+.login {
+  max-width: 400px;
+  margin: 0 auto;
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  width: 350px;
+  background: rgb(154, 203, 124);
+  border-radius: 10px;
+}
+.login label {
+  text-align: left;
+  display: block;
+  margin: 10px 10px;
+}
+.login h2 {
+  font-size: 25px;
+  color: #0c0330;
+  margin-bottom: 30px;
+}
+.login input{
+  width: 93%;
+  padding: 6px 10px;
+  margin: 10px 10px;
+  border: 1px solid #ddd;
+  box-sizing: border-box;
+  display: block;
+}
+.login button {
+  background: #0c0330;
+  color: #fff;
+  border: 0;
+  padding: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+
+.signup{
+  margin: 30px 0;
+  text-align: center;
+  font-size: 16px;
+  color: black;
+}
+
+.signup a{
+  color: #e90f0f;
+  text-decoration: none;
+}
+
+.signup a:hover{
+  text-decoration: underline;
+}
+
+/* CSS for Start page*/
+.start{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  background-color: #0c0330;
+  height: 170px;
+  width: 200px;
+  text-align: center;
+  padding: 10px;
+}
+.start h2{
+  font-size: 25px;
+  color: white;
+}
+.choices button{
+  width: 90%;
+  height: 50px;
+}
+#police{
+  background-color: lightblue;
+}
+#medic{
+  background-color: lightgreen;
+}
+#police:hover,#medic:hover{
+  background-color: wheat;
+}
+
