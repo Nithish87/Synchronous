@@ -4,6 +4,7 @@ import {BrowserRouter as Router,Route,Switch} from 'react-router-dom';
 import Navbar from './Navbar';
 import LoginPage from './LoginPage';
 import StartPage from './StartPage';
+import SignupPage from './SignupPage';
 
 function App() {
   return (
@@ -19,6 +20,11 @@ function App() {
             <Route exact path="/login">
               <LoginPage/>
             </Route>
+
+            <Route exact path="/signup">
+              <SignupPage/>
+            </Route>
+
           </Switch>
         </div>
       

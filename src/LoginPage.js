@@ -37,8 +37,8 @@ const LoginPage = () => {
                     <button>Login</button>
                 </div>
 
-                <div className="signup">
-                    Not a member? <Link to="">Signup</Link>
+                <div className="signupbutton">
+                    Not a member? <Link to="signup">Signup</Link>
                 </div>
             </form>
 

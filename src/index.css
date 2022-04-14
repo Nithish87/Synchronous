@@ -71,19 +71,19 @@
 }
 
 
-.signup{
+.signupbutton{
   margin: 30px 0;
   text-align: center;
   font-size: 16px;
   color: black;
 }
 
-.signup a{
+.signupbutton a{
   color: #e90f0f;
   text-decoration: none;
 }
 
-.signup a:hover{
+.signupbutton a:hover{
   text-decoration: underline;
 }
 
@@ -116,4 +116,6 @@
 #police:hover,#medic:hover{
   background-color: wheat;
 }
+
+/*CSS for Sigup page */
 
