@@ -118,4 +118,13 @@
 }
 
 /*CSS for Sigup page */
+/* CSS for map*/
+.leaflet-container {
+  width: 250px;
+  height: 250px;
 
+  margin-left: 45%;
+}
+#map{
+  height: 180px;
+}

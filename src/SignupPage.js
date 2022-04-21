@@ -1,10 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import LeafletMap from "./LeafletMap";
 
-import PlacesAutocomplete,{
-    geocodeByAddress,
-    getLatLng,
-} from "react-places-autocomplete";
 
 const SignupPage = () => {
 
@@ -21,7 +18,10 @@ const SignupPage = () => {
         lng: null
     });
 
-    const handleSelect=async(value)=>{};
+    
+
+    //Leaflet
+    
 
     return (
         <div className="signup">
@@ -50,38 +50,7 @@ const SignupPage = () => {
 
                 <div className="txt_field">
                     <label>Location:</label>
-                <div>
-                <PlacesAutocomplete
-                    value={address}
-                    onChange={setAddress}
-                    onSelect={handleSelect}
-                >
-                    {({ getInputProps, suggestions, getSuggestionItemProps, loading }) => (
-                    <div>
-                        <p>Latitude: {coordinates.lat}</p>
-                        <p>Longitude: {coordinates.lng}</p>
-
-                        <input {...getInputProps({ placeholder: "Type address" })} />
-
-                        <div>
-                        {loading ? <div>...loading</div> : null}
-
-                        {suggestions.map(suggestion => {
-                            const style = {
-                            backgroundColor: suggestion.active ? "#41b6e6" : "#fff"
-                            };
-
-                            return (
-                            <div {...getSuggestionItemProps(suggestion, { style })}>
-                                {suggestion.description}
-                            </div>
-                            );
-                        })}
-                        </div>
-                    </div>
-                    )}
-                </PlacesAutocomplete>
-                </div>
+                    <LeafletMap/>
                 </div>
 
                 <div className="txt_field">
@@ -114,8 +83,6 @@ const SignupPage = () => {
                     Already have an account? <Link to="/login">Login</Link>
                 </div>
             </form>
-
-            
         </div>
     );
 }
