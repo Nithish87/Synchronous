@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import LeafletMap from "./LeafletMap";
+import Search from "./Search";
 
 
 const SignupPage = () => {
@@ -13,15 +14,13 @@ const SignupPage = () => {
     //const [location, setLocation] = useState('');
 
     //const [add,setAdd]=useState('');
-    const [coordinates,setCoordinates]=useState({
-        lat: null,
-        lng: null
-    });
 
-    
+    const [selectPosition, setSelectPosition] = useState(null);
+
+
 
     //Leaflet
-    
+
 
     return (
         <div className="signup">
@@ -38,19 +37,31 @@ const SignupPage = () => {
                     />
                 </div>
 
-                {/* <div className="txt_field">
-                    <label>Address:</label>
-                    <textarea
-                        required
-                        value={address}
-                        onChange={(e) => setAddress(e.target.value)}
-                    >
-                    </textarea>
-                </div> */}
-
                 <div className="txt_field">
                     <label>Location:</label>
+                    <Search/>
                     <LeafletMap/>
+                    {/* <div
+                        style={{
+                            display: "flex",
+                            flexDirection: "row",
+                            width: "100vw",
+                            height: "100vh",
+                        }}
+                    >
+                        <div 
+                        style={{ width: "50vw", height: "100%" }}
+                        >
+                            <LeafletMap selectPosition={selectPosition} />
+                        </div>
+                        <div 
+                        style={{ width: "50vw" }}
+                        >
+                            <Search selectPosition={selectPosition} setSelectPosition={setSelectPosition} />
+                        </div>
+                    </div> */}
+
+
                 </div>
 
                 <div className="txt_field">

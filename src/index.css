@@ -120,10 +120,10 @@
 /*CSS for Sigup page */
 /* CSS for map*/
 .leaflet-container {
-  width: 250px;
-  height: 250px;
+  width: 500px;
+  height: 350px;
 
-  margin-left: 45%;
+  margin-left: 30%;
 }
 #map{
   height: 180px;

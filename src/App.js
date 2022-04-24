@@ -6,6 +6,8 @@ import LoginPage from './LoginPage';
 import StartPage from './StartPage';
 import SignupPage from './SignupPage';
 
+
+
 function App() {
   return (
     <Router>
@@ -25,6 +27,7 @@ function App() {
               <SignupPage/>
             </Route>
 
+            
           </Switch>
         </div>
       
