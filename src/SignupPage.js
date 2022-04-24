@@ -24,7 +24,7 @@ const SignupPage = () => {
         setLongitude(lon);
         // console.log(latitude);
     }
-    
+
     //Leaflet
 
 
