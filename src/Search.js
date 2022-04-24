@@ -14,8 +14,8 @@ const params = {
   addressdetails: "addressdetails",
 };
 
-export default function Search(props) {
-  const { selectPosition, setSelectPosition } = props;
+export default function Search({handleChange}) {
+  //const { selectPosition, setSelectPosition } = props;
   const [searchText, setSearchText] = useState("");
   const [listPlace, setListPlace] = useState([]);
 
@@ -24,14 +24,15 @@ export default function Search(props) {
     
 
     const onTrigger=()=>{
-        props.onCoordinatesChange(latitude,longitude);
+        handleChange(latitude,longitude);
     }
 
-    const handleChange=(lat,lon)=>{
-        setLatitude(lat);
-        setLongitude(lon);
-        // console.log(latitude);
-    }
+    // const handleChange=(lat,lon)=>{
+    //     setLatitude(lat);
+    //     setLongitude(lon);
+    //     // console.log(latitude);
+    //     onTrigger(latitude,longitude);
+    // }
 
 
 
@@ -87,15 +88,15 @@ export default function Search(props) {
                 <ListItem
                   button
                   onClick={() => {
-                    console.log(item);
-                      console.log(item.lat);
-                      console.log(item.lon);
+                    // console.log(item);
+                    //   console.log(item.lat);
+                    //   console.log(item.lon);
                     // setSelectPosition(item);
                     console.log("Hello");
                     handleChange(item.lat,item.lon);
-                    console.log(latitude);
-                    console.log(longitude);
-                    onTrigger();
+                    // console.log(latitude);
+                    // console.log(longitude);
+                    // onTrigger(latitude,longitude);
                   }}
                 >
                   <ListItemIcon>

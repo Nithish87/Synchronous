@@ -17,8 +17,14 @@ const SignupPage = () => {
 
     const [selectPosition, setSelectPosition] = useState(null);
 
-
-
+    const [latitude,setLatitude]=useState("");
+    const [longitude,setLongitude]=useState("");
+    const handleChange=(lat,lon)=>{
+        setLatitude(lat);
+        setLongitude(lon);
+        // console.log(latitude);
+    }
+    
     //Leaflet
 
 
@@ -39,8 +45,8 @@ const SignupPage = () => {
 
                 <div className="txt_field">
                     <label>Location:</label>
-                    <Search/>
-                    <LeafletMap/>
+                    <Search handleChange={handleChange}/>
+                    <LeafletMap latitude={latitude} longitude={longitude}/>
                     {/* <div
                         style={{
                             display: "flex",
