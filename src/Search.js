@@ -40,16 +40,16 @@ export default function Search({handleChange}) {
     <div style={{ display: "flex", flexDirection: "column" }}>
       <div style={{ display: "flex" }}>
         <div style={{ flex: 1 }}>
-          <OutlinedInput
-            style={{ width: "100%" }}
+          <OutlinedInput 
+            style={{ width: "100%"}}
             value={searchText}
             onChange={(event) => {
               setSearchText(event.target.value);
             }}
           />
         </div>
-        <div
-          style={{ display: "flex", alignItems: "center", padding: "0px 20px" }}
+        <div id="searchButton"
+          style={{ display: "flex", alignItems: "center", padding: "0px 20px"}}
         >
           <Button
             variant="contained"

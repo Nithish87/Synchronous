@@ -34,7 +34,7 @@ const SignupPage = () => {
             <h2>Signup:</h2>
             <form>
 
-                <div className="txt_field">
+                <div className="txt">
                     <label><b>Police station name:</b></label>
                     <input
                         type="text" required
@@ -44,8 +44,9 @@ const SignupPage = () => {
                 </div>
 
                 <div className="txt_field">
-                    <label>Location:</label>
-                    <Search handleChange={handleChange}/>
+                    <label><b>Location:</b></label>
+                    <div className="searchBar"><Search handleChange={handleChange}/></div>
+                    <br></br>
                     <LeafletMap latitude={latitude} longitude={longitude}/>
                     {/* <div
                         style={{
@@ -70,7 +71,7 @@ const SignupPage = () => {
 
                 </div>
 
-                <div className="txt_field">
+                <div className="txt">
                     <label><b>Password:</b></label>
                     <input
                         type="password"
@@ -80,7 +81,7 @@ const SignupPage = () => {
                     />
                 </div>
 
-                <div className="txt_field">
+                <div className="txt">
                     <label><b>Confirm Password:</b></label>
                     <input
                         type="password"
@@ -92,12 +93,12 @@ const SignupPage = () => {
 
                 {/* {!isPending && <button>Add blog</button>}
                 {isPending && <button disabled>Adding</button>} */}
-                <div className="loginButton">
+                <div className="signinButton">
                     <button>Signup</button>
                 </div>
 
                 <div className="signupbutton">
-                    Already have an account? <Link to="/login">Login</Link>
+                    <b>Already have an account?</b> <Link to="/login">Login</Link>
                 </div>
             </form>
         </div>
