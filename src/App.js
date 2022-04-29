@@ -5,6 +5,7 @@ import Navbar from './Navbar';
 import LoginPage from './LoginPage';
 import StartPage from './StartPage';
 import SignupPage from './SignupPage';
+import HomePage from './HomePage';
 
 
 
@@ -15,6 +16,9 @@ function App() {
         <Navbar/>
         <div className="content">
           <Switch>
+            <Route exact path="/">
+              <HomePage/>
+            </Route>
             <Route exact path="/start">
               <StartPage/>
             </Route>

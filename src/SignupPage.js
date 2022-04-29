@@ -44,9 +44,8 @@ const SignupPage = () => {
                 </div>
 
                 <div className="txt_field">
-                    <label><b>Location:</b></label>
-                    <div className="searchBar"><Search handleChange={handleChange}/></div>
-                    <br></br>
+                    <label>Location:</label>
+                    <Search handleChange={handleChange}/>
                     <LeafletMap latitude={latitude} longitude={longitude}/>
                     {/* <div
                         style={{
@@ -93,12 +92,12 @@ const SignupPage = () => {
 
                 {/* {!isPending && <button>Add blog</button>}
                 {isPending && <button disabled>Adding</button>} */}
-                <div className="signinButton">
+                <div className="loginButton">
                     <button>Signup</button>
                 </div>
 
                 <div className="signupbutton">
-                    <b>Already have an account?</b> <Link to="/login">Login</Link>
+                    Already have an account? <Link to="/login">Login</Link>
                 </div>
             </form>
         </div>
