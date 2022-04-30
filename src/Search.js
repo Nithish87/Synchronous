@@ -38,7 +38,7 @@ export default function Search({handleChange}) {
 
   return (
     <div style={{ display: "flex", flexDirection: "column" }}>
-      <div style={{ display: "flex" }}>
+      <div style={{ display: "flex", marginLeft: "10px" }}>
         <div style={{ flex: 1 }}>
           <OutlinedInput 
             style={{ width: "100%"}}
