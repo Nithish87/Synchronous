@@ -1,19 +1,16 @@
-import { useEffect, useState } from 'react';
+
 import HorizontalSlider from 'react-horizontal-slider';
 
 const EventsMenu = ({events,title}) => {
 
     return (
-            <div className="menuContents">
-            <HorizontalSlider
+            <HorizontalSlider 
                 title={title}
                 data={events}
-                height={500}
-                width={500}
+                height={300}
+                width={300}
                 id={'1'}
             />
-        </div>
-        
     );
 }
 

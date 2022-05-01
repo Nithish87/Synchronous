@@ -10,6 +10,7 @@ const HomePage = () => {
     return ( 
         <div className="home">
             <SearchBar/>
+            <br></br>
             <div className="events">
             {error && <div>{error}</div>}
             {isPending && <div>Loading....</div>}
