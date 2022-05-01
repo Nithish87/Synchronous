@@ -45,9 +45,10 @@ function LeftArrow() {
     React.useContext(VisibilityContext);
 
   return (
-    <Arrow disabled={isFirstItemVisible} onClick={() => scrollPrev()}>
-      Left
-    </Arrow>
+    // <Arrow disabled={isFirstItemVisible} onClick={() => scrollPrev()}>
+    //   Left
+    // </Arrow>
+    <div></div>
   );
 }
 
@@ -55,9 +56,10 @@ function RightArrow() {
   const { isLastItemVisible, scrollNext } = React.useContext(VisibilityContext);
 
   return (
-    <Arrow disabled={isLastItemVisible} onClick={() => scrollNext()}>
-      Right
-    </Arrow>
+      <div></div>
+    // <Arrow disabled={isLastItemVisible} onClick={() => scrollNext()}>
+    //   Right
+    // </Arrow>
   );
 }
 
