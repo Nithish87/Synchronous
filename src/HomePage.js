@@ -1,12 +1,19 @@
 //import SearchIcon from '@mui/icons-material/Search';
+import EventsMenu from './EventsMenu';
 import SearchBar from './SearchBar';
+import useFetch from "./useFetch";
 
 const HomePage = () => {
+
+    const {data:events,isPending,error}=useFetch('http://localhost:8000/events');
+
     return ( 
         <div className="home">
             <SearchBar/>
             <div className="events">
-                <h1><b><u>Events Nearby</u></b></h1>
+            {error && <div>{error}</div>}
+            {isPending && <div>Loading....</div>}
+            {events && <EventsMenu events={events} title="Events Nearby" />}
             </div>
         </div>
      );
