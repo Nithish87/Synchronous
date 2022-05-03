@@ -1,93 +1,40 @@
-import React from 'react';
-import { ScrollMenu, VisibilityContext } from 'react-horizontal-scrolling-menu';
+import React from "react";
+import { render } from "react-dom";
+import Slider from "react-animated-slider";
+import "react-animated-slider/build/horizontal.css";
+//import "normalize.css/normalize.css";
+//import "./slider-animations.css";
+//import "./styles.css";
+import content from "./data";
 
-const getItems = () =>
-  Array(20)
-    .fill(0)
-    .map((_, ind) => ({ id: `element-${ind}` }));
-
-function EventsMenu(events,title) {
-  const [items, setItems] = React.useState(getItems);
-  const [selected, setSelected] = React.useState([]);
-  const [position, setPosition] = React.useState(0);
-
-  const isItemSelected = (id) => !!selected.find((el) => el === id);
-
-  const handleClick =
-    (id) =>
-    ({ getItemById, scrollToItem }) => {
-      const itemSelected = isItemSelected(id);
-
-      setSelected((currentSelected) =>
-        itemSelected
-          ? currentSelected.filter((el) => el !== id)
-          : currentSelected.concat(id)
-      );
-    };
-
+const EventsMenu = (events) => {
+  //const content = Object.values(events);
+  console.log("HELLO");
+  console.log(content);
   return (
-    <ScrollMenu LeftArrow={LeftArrow} RightArrow={RightArrow}>
-      {items.map(({ id }) => (
-        <Card
-          itemId={id} // NOTE: itemId is required for track items
-          title={id}
-          key={id}
-          onClick={handleClick(id)}
-          selected={isItemSelected(id)}
-        />
+    <Slider className="slider-wrapper">
+      {content.map((item, index) => (
+        <div
+          key={index}
+          className="slider-content"
+          style={{ background: `url('${item.image}') no-repeat center center` }}
+        >
+          <div className="inner">
+            <h1>{item.title}</h1>
+            <p>{item.description}</p>
+            <button>{item.button}</button>
+          </div>
+          {/* <section>
+            <img src={item.userProfile} alt={item.user} />
+            <span>
+              Posted by <strong>{item.user}</strong>
+            </span>
+          </section> */}
+        </div>
       ))}
-    </ScrollMenu>
+    </Slider>
   );
-}
+};
 
-function LeftArrow() {
-  const { isFirstItemVisible, scrollPrev } =
-    React.useContext(VisibilityContext);
-
-  return (
-    // <Arrow disabled={isFirstItemVisible} onClick={() => scrollPrev()}>
-    //   Left
-    // </Arrow>
-    <div></div>
-  );
-}
-
-function RightArrow() {
-  const { isLastItemVisible, scrollNext } = React.useContext(VisibilityContext);
-
-  return (
-      <div></div>
-    // <Arrow disabled={isLastItemVisible} onClick={() => scrollNext()}>
-    //   Right
-    // </Arrow>
-  );
-}
-
-function Card({ onClick, selected, title, itemId }) {
-  const visibility = React.useContext(VisibilityContext);
-
-  return (
-    <div
-      onClick={() => onClick(visibility)}
-      style={{
-        width: '160px',
-      }}
-      tabIndex={0}
-    >
-      <div className="card">
-        <div>{title}</div>
-        <div>visible: {JSON.stringify(!!visibility.isItemVisible(itemId))}</div>
-        <div>selected: {JSON.stringify(!!selected)}</div>
-      </div>
-      <div
-        style={{
-          height: '200px',
-        }}
-      />
-    </div>
-  );
-}
-
-
-
+render(<EventsMenu />, document.getElementById("root"));
 export default EventsMenu;

@@ -10,11 +10,12 @@ const HomePage = () => {
     return ( 
         <div className="home">
             <SearchBar/>
-            <br></br>
             <div className="events">
+            <h1><b>Events Nearby!</b></h1>
+            <br></br>
             {error && <div>{error}</div>}
             {isPending && <div>Loading....</div>}
-            {events && <EventsMenu events={events} title="Events Nearby" />}
+            {events && <EventsMenu events={events}  />}
             </div>
         </div>
      );
