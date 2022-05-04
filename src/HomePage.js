@@ -1,4 +1,4 @@
-//import SearchIcon from '@mui/icons-material/Search';
+import Footer from './Footer';
 import EventsMenu from './EventsMenu';
 import SearchBar from './SearchBar';
 import useFetch from "./useFetch";
@@ -17,6 +17,7 @@ const HomePage = () => {
             {isPending && <div>Loading....</div>}
             {events && <EventsMenu events={events}  />}
             </div>
+            <Footer/>
         </div>
      );
 }

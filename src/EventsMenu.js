@@ -2,7 +2,7 @@ import React from "react";
 import { render } from "react-dom";
 import Slider from "react-animated-slider";
 import "react-animated-slider/build/horizontal.css";
-//import "normalize.css/normalize.css";
+import "normalize.css/normalize.css";
 //import "./slider-animations.css";
 //import "./styles.css";
 import content from "./data";
