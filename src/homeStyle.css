@@ -426,7 +426,7 @@ header section a {
 }
 
 /*CSS for Search bar*/
-.ais-SearchBox { margin: 1em 0; }
+.ais-SearchBox { margin: 2em 5em;}
 .ais-Pagination { margin-top: 1em }
 .left-panel { float: left; width: 250px; }
 .right-panel { margin-left: 260px; }
