@@ -1,31 +1,21 @@
-import { Input, Space } from 'antd';
-import { AudioOutlined } from '@ant-design/icons';
+import React from 'react';
+import ReactDOM from 'react-dom';
+import algoliasearch from 'algoliasearch/lite';
+import { InstantSearch, SearchBox, Hits } from 'react-instantsearch-dom';
 
-const { Search } = Input;
-
-const suffix = (
-    <AudioOutlined
-        style={{
-            fontSize: 16,
-            color: '#1890ff',
-        }}
-    />
+const searchClient = algoliasearch(
+  'latency',
+  '6be0576ff61c053d5f9a3225e2a90f76'
 );
 
-const onSearch = value => console.log(value);
-
-const SearchBar = () => {
-    return (
-        <div className="search">
-            <Space direction="vertical">
-                <Search
-                    placeholder="input place of date"
-                    onSearch={onSearch}
-                    enterButton />
-            </Space>
-        </div>
-
-    )
-}
+const SearchBar = () => (
+  <InstantSearch
+    indexName="bestbuy"
+    searchClient={searchClient}
+  >
+    <SearchBox />
+    {/* <Hits /> */}
+  </InstantSearch>
+);
 
 export default SearchBar;
