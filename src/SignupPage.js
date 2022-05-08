@@ -40,7 +40,9 @@ const SignupPage = () => {
             onChange={(e) => setName(e.target.value)}
           />
         </div>
-
+        <label>Location:</label>
+        <Search handleChange={handleChange} />
+        <LeafletMap latitude={latitude} longitude={longitude} />
         {/* <div
                         style={{
                             display: "flex",
