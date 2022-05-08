@@ -6,26 +6,39 @@ import Search from "./Search";
 
 const SignupPage = () => {
 
+    //Stores the name
     const [name, setName] = useState('');
+    //Stores password
     const [password, setPassword] = useState('');
+    //Stores confirm password
     const [cPassword, setCPassword] = useState('');
-    const [address, setAddress] = useState('');
+    //Organisation dropdown selection
+    const [type, setType] = useState('Select Emergency Organisation');
+    //Stores email
     const [email, setEmail] = useState('');
+    //Stores phone number
     const [phone, setPhone] = useState('');
+    //Stores the state of dropdown button
+    const [state,setState]=useState(false);
 
     //const [add,setAdd]=useState('');
 
     const [selectPosition, setSelectPosition] = useState(null);
 
-    const [latitude,setLatitude]=useState("");
-    const [longitude,setLongitude]=useState("");
-    const handleChange=(lat,lon)=>{
+    const [latitude, setLatitude] = useState("");
+    const [longitude, setLongitude] = useState("");
+    const handleChange = (lat, lon) => {
         setLatitude(lat);
         setLongitude(lon);
         // console.log(latitude);
     }
 
-    //Leaflet
+    const handleClick=()=>{
+        if(state==false)
+            setState(true);
+        else if(state==true)
+            setState(false);
+    }
 
 
     return (
@@ -34,8 +47,28 @@ const SignupPage = () => {
             <h2>Signup:</h2>
             <form>
 
+                <div class="organisationType">
+                    <button class="dropDownButton" type="button" id="dropdownMenuButton1"
+                     data-bs-toggle="dropdown" aria-expanded="false" onClick={handleClick}>
+                        {type}
+                    </button>
+                    {state && <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                        <li onClick={()=>{
+                            {/*Sets the type to police*/}
+                            setType("Police Station");
+                            setState(false);
+                        }}>Police Station</li>
+                        <hr></hr>
+                        <li onClick={()=>{
+                            {/*Sets the type to hospital*/}
+                            setType("Hospital");
+                            setState(false);
+                        }}>Hospital</li>
+                    </ul>}
+                </div>
+
                 <div className="txt">
-                    <label><b>Police station name:</b></label>
+                    <label><b>Organisation Name:</b></label>
                     <input
                         type="text" required
                         value={name}
@@ -44,9 +77,9 @@ const SignupPage = () => {
                 </div>
 
                 <div className="txt_field">
-                    <label>Location:</label>
-                    <Search handleChange={handleChange}/>
-                    <LeafletMap latitude={latitude} longitude={longitude}/>
+                    <label><b>Location:</b></label>
+                    <Search handleChange={handleChange} />
+                    <LeafletMap latitude={latitude} longitude={longitude} />
                     {/* <div
                         style={{
                             display: "flex",
@@ -118,6 +151,8 @@ const SignupPage = () => {
 
                 <div className="signupbutton">
                     Already have an account? <Link to="/login">Login</Link>
+                    <br></br>
+                    <br></br>
                 </div>
             </form>
         </div>
