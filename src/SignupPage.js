@@ -9,7 +9,7 @@ const SignupPage = () => {
   const [cPassword, setCPassword] = useState("");
   const [address, setAddress] = useState("");
   const [email, setEmail] = useState("");
-  //const [location, setLocation] = useState('');
+  const [phone, setPhone] = useState("");
 
   //const [add,setAdd]=useState('');
 
@@ -41,12 +41,7 @@ const SignupPage = () => {
           />
         </div>
 
-        <div className='txt_field'>
-          <label>Location:</label>
-          <Search handleChange={handleChange} />
-          <LeafletMap latitude={latitude} longitude={longitude} />
-
-          {/* <div
+        {/* <div
                         style={{
                             display: "flex",
                             flexDirection: "row",
@@ -65,6 +60,41 @@ const SignupPage = () => {
                             <Search selectPosition={selectPosition} setSelectPosition={setSelectPosition} />
                         </div>
                     </div> */}
+
+        <div className='txt'>
+          <label>
+            <b>Password:</b>
+          </label>
+          <input
+            type='password'
+            required
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+        </div>
+
+        <div className='txt'>
+          <label>
+            <b>Email:</b>
+          </label>
+          <input
+            type='email'
+            required
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+        </div>
+
+        <div className='txt'>
+          <label>
+            <b>Phone:</b>
+          </label>
+          <input
+            type='tel'
+            required
+            value={phone}
+            onChange={(e) => setPhone(e.target.value)}
+          />
         </div>
 
         <div className='txt'>
