@@ -11,7 +11,7 @@ const SignupPage = () => {
     const [cPassword, setCPassword] = useState('');
     const [address, setAddress] = useState('');
     const [email, setEmail] = useState('');
-    //const [location, setLocation] = useState('');
+    const [phone, setPhone] = useState('');
 
     //const [add,setAdd]=useState('');
 
@@ -68,6 +68,26 @@ const SignupPage = () => {
                     </div> */}
 
 
+                </div>
+
+                <div className="txt">
+                    <label><b>Email:</b></label>
+                    <input
+                        type="email"
+                        required
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                    />
+                </div>
+
+                <div className="txt">
+                    <label><b>Phone:</b></label>
+                    <input
+                        type="tel"
+                        required
+                        value={phone}
+                        onChange={(e) => setPhone(e.target.value)}
+                    />
                 </div>
 
                 <div className="txt">
