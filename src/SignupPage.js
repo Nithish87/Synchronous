@@ -10,11 +10,7 @@ const SignupPage = () => {
   const [address, setAddress] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
-
-  //const [add,setAdd]=useState('');
-
   const [selectPosition, setSelectPosition] = useState(null);
-
   const [latitude, setLatitude] = useState("");
   const [longitude, setLongitude] = useState("");
   const handleChange = (lat, lon) => {
