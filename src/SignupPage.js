@@ -3,8 +3,9 @@ import { Link } from "react-router-dom";
 import { withRouter } from "react-router-dom";
 import LeafletMap from "./LeafletMap";
 import Search from "./Search";
-import { auth } from "./backend/firebase-config";
-import { createUserWithEmailAndPassword } from "firebase/auth";
+import { auth, db } from "./backend/firebase-config";
+import { createUserWithEmailAndPassword, deleteUser } from "firebase/auth";
+import { ref, set } from "firebase/database";
 const SignupPage = ({ history }) => {
   const [name, setName] = useState("");
   const [password, setPassword] = useState("");
@@ -33,13 +34,31 @@ const SignupPage = ({ history }) => {
     if (password !== cPassword) {
       return setError("Passwords Do not match");
     }
-    try {
-      console.log(email);
-      await createUserWithEmailAndPassword(auth, email, password);
-      history.push("/");
-    } catch (error) {
-      alert(error);
-    }
+    createUserWithEmailAndPassword(auth, email, password)
+      .then((userCred) => {
+        set(ref(db, "users/" + userCred.user.uid), {
+          type: type,
+          orgName: name,
+          location: {
+            latitude: latitude,
+            longitude: longitude,
+          },
+          email: email,
+          phoneNo: phone,
+        })
+          .then(() => {
+            history.push("/");
+          })
+          .catch((error) => {
+            alert("Error from DB" + error);
+            const user = auth.currentUser;
+            console.log(user);
+            deleteUser(user);
+          });
+      })
+      .catch((error) => {
+        alert(error.message);
+      });
   };
 
   return (
