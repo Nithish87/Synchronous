@@ -3,6 +3,9 @@ import EventsMenu from './EventsMenu';
 import SearchBar from './SearchBar';
 import useFetch from "./useFetch";
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faAngleRight } from '@fortawesome/free-solid-svg-icons';
+
 const HomePage = () => {
 
     const {data:events,isPending,error}=useFetch('http://localhost:8000/events');

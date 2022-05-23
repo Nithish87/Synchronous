@@ -3,7 +3,7 @@ import { auth } from "./backend/firebase-config";
 import { signOut } from "firebase/auth";
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHomeUser,faSignOut } from '@fortawesome/free-solid-svg-icons';
+import { faPowerOff,faSignOut, faUser } from '@fortawesome/free-solid-svg-icons';
 import { useState } from "react";
 
 const Navbar = () => {
@@ -11,8 +11,10 @@ const Navbar = () => {
 
   const [state,setState]=useState(false);
 
-  const profile = <FontAwesomeIcon icon={faHomeUser} />;
-  const signout= <FontAwesomeIcon icon={faSignOut}/>
+  const profile = <FontAwesomeIcon icon={faUser} />;
+  const signout= <FontAwesomeIcon icon={faSignOut}/>;
+  const power=<FontAwesomeIcon icon={faPowerOff}/>;
+
   return (
     <nav className='navbar'>
       <h1>Godsend</h1>
@@ -26,12 +28,14 @@ const Navbar = () => {
             setState(false);
           else
             setState(true);
-         }}>{profile}</Link>
+         }}>{power}</Link>
          <br></br>
         <div className="userProfile">
           {state && 
             <div>
               <br></br>
+              {/* <Link to='/'>Profile</Link>
+              <br></br> */}
               <Link onClick={() => signOut(auth)}>Signout <span><FontAwesomeIcon icon={faSignOut}/></span></Link>
             </div>
           }
