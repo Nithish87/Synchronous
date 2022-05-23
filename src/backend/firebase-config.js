@@ -1,14 +1,13 @@
 import { initializeApp } from "firebase/app";
-import { getDatabase } from "firebase/database";
+import { getDatabase, get, child } from "firebase/database";
 import { getAuth } from "firebase/auth";
 const firebaseConfig = {
-  apiKey: "AIzaSyDQomkCFsZkS3G5huvUa-XhRhDONkHiSZ4",
-  authDomain: "godsend-website.firebaseapp.com",
-  projectId: "godsend-website",
-  storageBucket: "godsend-website.appspot.com",
-  messagingSenderId: "563699958313",
-  appId: "1:563699958313:web:654c5c304afa844bb29238",
-  measurementId: "G-9GWVNL2P5L",
+  apiKey: "AIzaSyAlmdLR_bdjp0Leetpi53dc7wbxQqHZTqE",
+  authDomain: "godsend-website-c62e0.firebaseapp.com",
+  projectId: "godsend-website-c62e0",
+  storageBucket: "godsend-website-c62e0.appspot.com",
+  messagingSenderId: "299022445549",
+  appId: "1:299022445549:web:e9f435dae04b9eb3a255e4",
 };
 
 // Initialize Firebase
