@@ -30,12 +30,12 @@ const Navbar = () => {
             setState(true);
          }}>{power}</Link>
          <br></br>
+
         <div className="userProfile">
           {state && 
-            <div>
+            <div className="profile">
+              <Link to='/'>Profile <span><FontAwesomeIcon icon={faUser}/></span></Link>
               <br></br>
-              {/* <Link to='/'>Profile</Link>
-              <br></br> */}
               <Link onClick={() => signOut(auth)}>Signout <span><FontAwesomeIcon icon={faSignOut}/></span></Link>
             </div>
           }

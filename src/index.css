@@ -7,17 +7,17 @@
 } */
 
 .navbar{
-  padding: 20px;
+  padding: 10px;
   display: flex;
   align-items: center;
   max-width: 100%;
   margin: 0 auto;
   border-bottom: 1px solid #f2f2f2;
   margin-right: 0;
-  
+  background-color: #282362;
 }
 .navbar h1{
-  color: #1d1594;
+  color: white;
   font-size: 50px;
 }
 .navbar .links{
@@ -27,18 +27,50 @@
   margin-left: 16px;
   text-decoration: none;
   padding: 6px;
+  color: white;
 }
 .navbar a:hover{
   color: #f1356d;
 }
 
+.userProfile{
+  background-color: #535254;
+}
+.profile{
+  position: absolute;
+  top: 13%;
+  background-color: rgba(102, 103, 105, 0.4);
+  opacity: 10;
+  border-radius: 10px;
+  right: 2%;
+  padding: 10px;
+  line-height: 2.0;
+}
+
+.content{
+  height: 100%;
+  width: 100%;
+  margin-top: 0;
+}
+
 /*CSS for login page*/
+.loginTop{
+  background-image: url(../data/images/emergency2.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: '100vw';
+  height: '100vh';
+  padding-top: 5%;
+  padding-bottom: 8%;
+}
 .login {
   max-width: 400px;
   margin: 0 auto;
+  margin-top: 4%;
   text-align: center;
   width: 350px;
-  background: rgb(154, 203, 124);
+  background: rgb(148, 162, 190,0.8);
   border-radius: 10px;
   padding-top: 1px;
   padding-bottom: 1px;
@@ -80,7 +112,7 @@
 }
 
 .signupbutton a{
-  color: #e90f0f;
+  color: #e9e4e4;
   text-decoration: none;
 }
 
