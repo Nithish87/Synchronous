@@ -62,10 +62,11 @@ const SignupPage = ({ history }) => {
   };
 
   return (
-    <div className='signup'>
-      <h2>Signup:</h2>
-      {Error ? Error : ""}
-      <form onSubmit={handleSignUp}>
+    <div className='signupTop'>
+
+      <form className="signup" onSubmit={handleSignUp}>
+        <h2>Signup:</h2>
+        {Error ? Error : ""}
         <div class='organisationType'>
           <button
             class='dropDownButton'
@@ -172,8 +173,8 @@ const SignupPage = ({ history }) => {
         </div>
 
         {/* {!isPending && <button>Add blog</button>}
-    {isPending && <button disabled>Adding</button>} */}
-        <div className='loginButton'>
+     {isPending && <button disabled>Adding</button>} */}
+        <div className='signupB'>
           <button>Signup</button>
         </div>
 
@@ -182,8 +183,8 @@ const SignupPage = ({ history }) => {
           <br></br>
           <br></br>
         </div>
-      </form>
-    </div>
+      </form >
+    </div >
   );
 };
 

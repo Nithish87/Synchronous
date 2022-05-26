@@ -41,7 +41,7 @@
   top: 13%;
   background-color: rgba(102, 103, 105, 0.4);
   opacity: 10;
-  border-radius: 10px;
+  border-radius: 5px;
   right: 2%;
   padding: 10px;
   line-height: 2.0;
@@ -169,16 +169,31 @@
 } */
 
 /*CSS Signup page*/
+.signupTop{
+  background-image: url(../data/images/background6.jpeg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: '100vw';
+  height: '100vh';
+  padding-top: 1%;
+  padding-bottom: 3%;
+}
+
 .signup {
   /* max-width: 500px; */
   margin: 0 auto;
   text-align: center;
   width: 50%;
-  background: rgb(126, 173, 227);
+  background: rgb(126, 173, 227,0.5);
   border-radius: 10px;
   margin-top: 3%;
   padding-top: 10px;
   /* padding-bottom: 2%; */
+}
+
+.signup label{
+  color: #0c0330;
 }
 
 .signup label {
@@ -219,6 +234,15 @@
   border-radius: 5px;
   width: 100px;
   margin-bottom: 10px;
+}
+
+.signupB button{
+  background: #0c0330;
+  color: #fff;
+  border: 0;
+  padding: 8px;
+  border-radius: 8px;
+  cursor: pointer;
 }
 
 /*CSS for Dropdown menu*/
