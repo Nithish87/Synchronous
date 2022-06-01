@@ -122,9 +122,9 @@ const SignupPage = ({ history }) => {
           <label>
             <b>Location:</b>
           </label>
-          {/* <Search handleChange={handleChange} />
-          <LeafletMap latitude={latitude} longitude={longitude} /> */}
-          <MyGoogleMap />
+          <Search handleChange={handleChange} />
+          {/* <LeafletMap latitude={latitude} longitude={longitude} /> */}
+          {/* <MyGoogleMap /> */}
         </div>
 
         <div className='txt'>

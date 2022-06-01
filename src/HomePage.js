@@ -7,9 +7,11 @@ import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "./backend/Auth";
 import { getDatabase, ref, child, get } from "firebase/database";
 import content from "./data";
+import { useParams } from "react-router-dom/cjs/react-router-dom.min";
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleRight } from '@fortawesome/free-solid-svg-icons';
+import EventsList from "./EventsList";
 
 const HomePage = () => {
   const [user, setuser] = useState("");
@@ -18,6 +20,8 @@ const HomePage = () => {
   const lat2 = content[1].location.lattitude;
   const lon2 = content[1].location.longitude;
   console.log(dist);
+
+  const {data:events,isPending,error}=useFetch('http://localhost:8000/events');
 
   //for getting current user details
   const getUsers = async () => {
@@ -62,17 +66,20 @@ const HomePage = () => {
       setdist(distance(lat1, lat2, lon1, lon2).toString());
     }
   }, []);
+
+  //const title="Events Nearby!";
+
   return (
     <div className='home'>
       <SearchBar />
-      {/* <div className="events">
-            <h1><b>Events Nearby!</b></h1>
-            <br></br>
+      <div className="events">
+            {/* <h1><b>Events Nearby!</b></h1>
+            <br></br> */}
             {error && <div>{error}</div>}
             {isPending && <div>Loading....</div>}
-            {events && <EventsMenu events={events}  />}
-            </div> */}
-      <h1>Current user latitude:{user && user.location.latitude}</h1>
+            {events && <EventsList events={events} title="Events Nearby!"/>}
+            </div>
+      {/* <h1>Current user latitude:{user && user.location.latitude}</h1>
       <h1>Current user longitude:{user && user.location.longitude}</h1>
       <h1>
         Accident Happend in Banglore: latitude:{lat2} longitude:{lon2}
@@ -82,7 +89,7 @@ const HomePage = () => {
         We need to calculate distance between current users's location and every
         accidents.Then we select police station or hospital based on nearest
         distance.
-      </h2>
+      </h2> */}
       <Footer />
     </div>
   );

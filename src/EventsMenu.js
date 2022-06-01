@@ -9,7 +9,7 @@ import content from "./data";
 
 const EventsMenu = (events) => {
   //const content = Object.values(events);
-  console.log("HELLO");
+  //console.log("HELLO");
   console.log(content);
   return (
     <Slider className="slider-wrapper">
