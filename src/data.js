@@ -46,22 +46,22 @@ const content = [
     },
     id: 4,
   },
-  {
-    image:
-      "https://www.hellomumbainews.com/wp-content/uploads/2018/06/IMG-20180617-WA0067-696x392.jpg",
-    alt: "Accident",
-    title: "At not so safe right turn",
-    button: "View",
-    id: 5,
-  },
-  {
-    image:
-      "https://avnetlaw.com/wp-content/uploads/2019/02/car-accident-1200x800.jpg",
-    alt: "Accident",
-    title: "Near Casual meeting place Cafe",
-    button: "View",
-    id: 6,
-  },
+  // {
+  //   image:
+  //     "https://www.hellomumbainews.com/wp-content/uploads/2018/06/IMG-20180617-WA0067-696x392.jpg",
+  //   alt: "Accident",
+  //   title: "At not so safe right turn",
+  //   button: "View",
+  //   id: 5,
+  // },
+  // {
+  //   image:
+  //     "https://avnetlaw.com/wp-content/uploads/2019/02/car-accident-1200x800.jpg",
+  //   alt: "Accident",
+  //   title: "Near Casual meeting place Cafe",
+  //   button: "View",
+  //   id: 6,
+  // },
 ];
 
 export default content;
