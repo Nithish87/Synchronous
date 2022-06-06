@@ -12,10 +12,10 @@ const EventsList = ({events,title}) => {
         <div className="event-list">
             <h1><b>{title}</b></h1>
             <br></br>
-            {events.map((event) => (
+            {events.slice(0).reverse().map((event) => (
                 <div className="event-Preview" key={event.id}>
                         <h2>{event.title}</h2>
-                        <Link to=""><button className="viewButton">View</button></Link>
+                        <Link to={`/view/${event.id}`}><button className="viewButton">View</button></Link>
                     {/* <button onClick={()=>handleDelete(blog.id)}>Delete Blog</button> */}
                 </div>
             ))}
