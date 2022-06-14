@@ -6,7 +6,7 @@ import Search from "./Search";
 import { auth, db } from "./backend/firebase-config";
 import { createUserWithEmailAndPassword, deleteUser } from "firebase/auth";
 import { ref, set } from "firebase/database";
-import MyGoogleMap from './MyGoogleMap';
+import MyGoogleMap from "./MyGoogleMap";
 
 const SignupPage = ({ history }) => {
   const [name, setName] = useState("");
@@ -49,6 +49,7 @@ const SignupPage = ({ history }) => {
           phoneNo: phone,
         })
           .then(() => {
+            console.log("/ pushed");
             history.push("/");
           })
           .catch((error) => {
@@ -65,8 +66,7 @@ const SignupPage = ({ history }) => {
 
   return (
     <div className='signupTop'>
-
-      <form className="signup" onSubmit={handleSignUp}>
+      <form className='signup' onSubmit={handleSignUp}>
         <h2>Signup:</h2>
         {Error ? Error : ""}
         <div class='organisationType'>
@@ -186,8 +186,8 @@ const SignupPage = ({ history }) => {
           <br></br>
           <br></br>
         </div>
-      </form >
-    </div >
+      </form>
+    </div>
   );
 };
 
