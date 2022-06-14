@@ -2,38 +2,26 @@ import Footer from "./Footer";
 import EventsMenu from "./EventsMenu";
 import SearchBar from "./SearchBar";
 import useFetch from "./useFetch";
+import { db, auth } from "./backend/firebase-config";
 import { useContext, useEffect, useState } from "react";
-import content from "./data";
 import { AuthContext } from "./backend/Auth";
-import { get, child, ref } from "firebase/database";
-import { db } from "./backend/firebase-config";
+import { getDatabase, ref, child, get } from "firebase/database";
+import content from "./data";
 import { useParams } from "react-router-dom/cjs/react-router-dom.min";
-import Geocode from "react-geocode";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faAngleRight } from "@fortawesome/free-solid-svg-icons";
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faAngleRight } from '@fortawesome/free-solid-svg-icons';
 import EventsList from "./EventsList";
-import { getDistance, getPreciseDistance } from "geolib";
-//import { getUsers } from "./backend/getAccidents";
+
 const HomePage = () => {
-  Geocode.setApiKey("AIzaSyCJksHNqEJlMdqymtXAhPbEnrgq63y1Nd0");
-  const range = 50;
+  const [user, setuser] = useState("");
   const { currentUser } = useContext(AuthContext);
-  const [user, setuser] = useState(null);
-  const [events, setEvents] = useState(null);
-  const accidents = [];
-  console.log(user);
-  console.log(events);
-  const dbRef = ref(db);
-  const getEvents = () => {
-    get(dbRef).then((snapshot) => {
-      setEvents(snapshot.child("GPS").val());
-    });
-  };
-  // const {
-  //   data: events,
-  //   isPending,
-  //   error,
-  // } = useFetch("http://localhost:8000/events");
+  const [dist, setdist] = useState("");
+  const lat2 = content[1].location.lattitude;
+  const lon2 = content[1].location.longitude;
+  console.log(dist);
+
+  const {data:events,isPending,error}=useFetch('http://localhost:8000/content');
 
   const getUsers = async () => {
     await get(child(dbRef, `users/${currentUser.uid}`))
@@ -122,6 +110,7 @@ const HomePage = () => {
       }
     );
   };
+
   useEffect(() => {
     //getEvents();
   }, []);
