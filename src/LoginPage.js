@@ -24,9 +24,10 @@ const LoginPage = ({ history }) => {
     return <Redirect to='/' />;
   }
   return (
-    <div className='login'>
-      <h2>Login:</h2>
-      <form onSubmit={handleLogin}>
+    <div className='loginTop'>
+      
+      <form className="login" onSubmit={handleLogin}>
+        <h2>Login:</h2>
         <div className='txt_field'>
           <label>
             <b>Email:</b>

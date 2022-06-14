@@ -8,6 +8,11 @@ import { distance } from "./backend/distance";
 import { AuthContext } from "./backend/Auth";
 import { get, child, ref } from "firebase/database";
 import { db } from "./backend/firebase-config";
+import { useParams } from "react-router-dom/cjs/react-router-dom.min";
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faAngleRight } from '@fortawesome/free-solid-svg-icons';
+import EventsList from "./EventsList";
 
 const HomePage = () => {
   const dist1 = [];
@@ -17,8 +22,14 @@ const HomePage = () => {
   const { currentUser } = useContext(AuthContext);
   const dbRef = ref(db);
   const [user, setuser] = useState(null);
-  const getUsers = () => {
-    get(child(dbRef, `users/${currentUser.uid}`))
+ 
+
+  const {data:events,isPending,error}=useFetch('http://localhost:8000/events');
+
+  //for getting current user details
+  const getUsers = async () => {
+    const dbRef = ref(db);
+    await get(child(dbRef, `users/${currentUser.uid}`))
       .then((snapshot) => {
         if (snapshot.exists()) {
           setuser(snapshot.val());
@@ -71,14 +82,14 @@ const HomePage = () => {
   return (
     <div className='home'>
       <SearchBar />
-      {/* <div className="events">
-            <h1><b>Events Nearby!</b></h1>
-            <br></br>
+      <div className="events">
+            {/* <h1><b>Events Nearby!</b></h1>
+            <br></br> */}
             {error && <div>{error}</div>}
             {isPending && <div>Loading....</div>}
-            {events && <EventsMenu events={events}  />}
-            </div> */}
-      <h1>Current user latitude:{user && user.location.latitude}</h1>
+            {events && <EventsList events={events} title="Events Nearby!"/>}
+            </div>
+      {/* <h1>Current user latitude:{user && user.location.latitude}</h1>
       <h1>Current user longitude:{user && user.location.longitude}</h1>
       <h1>
         Accident Happend in Banglore: latitude:{lat2} longitude:{lon2}

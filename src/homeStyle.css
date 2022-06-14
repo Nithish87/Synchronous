@@ -435,3 +435,34 @@ header section a {
 .ais-Hits-item img { margin-right: 1em }
 .hit-name { margin-bottom: .5em }
 .hit-description { color: #888; font-size: 14px; margin-bottom: .5em }
+
+/*CSS for User profile*/
+.userProfile{
+  margin-left: 69%;
+}
+
+/*CSS for new Events list*/
+.event-Preview{
+  background-color: whitesmoke;
+  border-radius: 15px;
+  margin-left: 5%;
+  padding-top: 2px;
+  padding-bottom: 8px;
+  padding-left: 1%;
+  box-shadow: 0 5px 10px gray;
+  margin-bottom: 2%;
+  width: 75%;
+}
+
+.viewButton{
+  background-color: rgb(14, 7, 75);
+  color: white;
+  padding: 8px;
+  border-radius: 10px;
+  margin-left: 90%;
+}
+
+
+.event-list{
+  column-gap: 40px;
+}
