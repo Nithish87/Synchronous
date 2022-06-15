@@ -9,12 +9,6 @@ import content from "./data";
 
 const EventsMenu = (events) => {
   //const content = Object.values(events);
-<<<<<<< HEAD
-  //console.log("HELLO");
-  console.log(content);
-=======
-
->>>>>>> 759a3de695bf35e46727e7fcf4e1af6e70042b10
   return (
     <Slider className='slider-wrapper'>
       {content.map((item, index) => (

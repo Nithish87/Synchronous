@@ -7,7 +7,7 @@ import SignupPage from "./SignupPage";
 import HomePage from "./HomePage";
 import { AuthProvider } from "./backend/Auth";
 import PrivateRoute from "./backend/PrivateRoute.js";
-import EventPage from "./EventPage";
+//import EventPage from "./EventPage";
 
 function App() {
   return (
@@ -29,9 +29,10 @@ function App() {
                 <SignupPage />
               </Route>
 
-              <Route exact path='/view/:id'>
+              {/* <Route exact path='/view/:id'>
                 <EventPage/>
-              </Route>
+              </Route> */}
+              
             </Switch>
           </div>
         </div>
