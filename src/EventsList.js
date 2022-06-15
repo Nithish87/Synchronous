@@ -7,6 +7,7 @@ const EventsList = ({events,title}) => {
     //console.log(events);
 
     //to={`/blogs/${event.id}`
+    const eventsR=events.reverse();
 
     return ( 
         <div className="event-list">
@@ -15,7 +16,7 @@ const EventsList = ({events,title}) => {
             {events.slice(0).reverse().map((event) => (
                 <div className="event-Preview" key={event.id}>
                         <h2>{event.title}</h2>
-                        <Link to={`/view/${event.id}`}><button className="viewButton">View</button></Link>
+                        <Link to=""><button className="viewButton">View</button></Link>
                     {/* <button onClick={()=>handleDelete(blog.id)}>Delete Blog</button> */}
                 </div>
             ))}

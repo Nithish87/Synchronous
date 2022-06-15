@@ -5,9 +5,10 @@ const content = [
     alt: "Accident",
     title: "Near Moodbidre",
     location: {
-      lattitude: 13.061152,
-      longitude: 74.995972,
+      lattitude: 13.0344263,
+      longitude: 74.9142341,
     },
+    link: "https://goo.gl/maps/nVmzg6ZTnMnahdrE8",
     id: 1,
   },
   {
@@ -17,9 +18,10 @@ const content = [
     title: "Bangalore",
     button: "View",
     location: {
-      lattitude: 12.9716,
-      longitude: 77.5946,
+      lattitude: 13.0325338,
+      longitude: 74.9113024,
     },
+    link: "https://goo.gl/maps/dzVTx8cZY6v7Kohd9",
     id: 2,
   },
   {
@@ -29,9 +31,10 @@ const content = [
     title: "Near Miyaru",
     button: "View",
     location: {
-      lattitude: 13.193254,
-      longitude: 75.049118,
+      lattitude: 13.001439,
+      longitude: 74.809447,
     },
+    link:"https://goo.gl/maps/gozKGL9CfGqMZ7bH8",
     id: 3,
   },
   {
@@ -41,27 +44,38 @@ const content = [
     title: "Near Kukkunduru",
     button: "View",
     location: {
-      lattitude: 13.23784,
-      longitude: 74.982651,
+      lattitude: 13.2139173,
+      longitude: 74.997844,
     },
+    link:"https://goo.gl/maps/ktc3xhftTuyok8XW7",
     id: 4,
   },
-  // {
-  //   image:
-  //     "https://www.hellomumbainews.com/wp-content/uploads/2018/06/IMG-20180617-WA0067-696x392.jpg",
-  //   alt: "Accident",
-  //   title: "At not so safe right turn",
-  //   button: "View",
-  //   id: 5,
-  // },
-  // {
-  //   image:
-  //     "https://avnetlaw.com/wp-content/uploads/2019/02/car-accident-1200x800.jpg",
-  //   alt: "Accident",
-  //   title: "Near Casual meeting place Cafe",
-  //   button: "View",
-  //   id: 6,
-  // },
+  {
+    image:
+      "https://www.hellomumbainews.com/wp-content/uploads/2018/06/IMG-20180617-WA0067-696x392.jpg",
+    alt: "Accident",
+    title: "At not so safe right turn",
+    button: "View",
+    location: {
+      lattitude: 13.022088,
+      longitude: 74.7927466,
+    },
+    link:"https://goo.gl/maps/s3kpneXg32srFtB3A",
+    id: 5,
+  },
+  {
+    image:
+      "https://avnetlaw.com/wp-content/uploads/2019/02/car-accident-1200x800.jpg",
+    alt: "Accident",
+    title: "Near Casual meeting place Cafe",
+    button: "View",
+    location: {
+      lattitude: 13.434953,
+      longitude: 74.7428656,
+    },
+    link:"https://goo.gl/maps/m6U7W2LX6T3EZC7v9",
+    id: 6,
+  },
 ];
 
 export default content;

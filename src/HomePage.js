@@ -21,7 +21,7 @@ const HomePage = () => {
   const lon2 = content[1].location.longitude;
   console.log(dist);
 
-  const {data:events,isPending,error}=useFetch('http://localhost:8000/content');
+  const {data:events,isPending,error}=useFetch('http://localhost:8000/events');
 
   //for getting current user details
   const getUsers = async () => {
