@@ -10,8 +10,12 @@ import content from "./data";
 import { useParams } from "react-router-dom/cjs/react-router-dom.min";
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faAngleRight } from '@fortawesome/free-solid-svg-icons';
+import { faAngleRight, faLocationPin } from '@fortawesome/free-solid-svg-icons';
 import EventsList from "./EventsList";
+
+//Import for Notification
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const HomePage = () => {
   const [user, setuser] = useState("");
@@ -67,29 +71,35 @@ const HomePage = () => {
     }
   }, []);
 
+  //Variable for notification
+  const notify = () => toast.error("Lorem ipsum dolor", {
+    theme: "colored"
+  })
+  //Sound
+  const play=()=> {
+    var audio = new Audio("../data/Audio/beep.mp3");
+    audio.play();
+}
+
+
   //const title="Events Nearby!";
 
   return (
     <div className='home'>
-      <SearchBar />
+      {/* <SearchBar /> */}
       <div className="events">
             {/* <h1><b>Events Nearby!</b></h1>
             <br></br> */}
             {error && <div>{error}</div>}
             {isPending && <div>Loading....</div>}
             {events && <EventsList events={events} title="Events Nearby!"/>}
-            </div>
-      {/* <h1>Current user latitude:{user && user.location.latitude}</h1>
-      <h1>Current user longitude:{user && user.location.longitude}</h1>
-      <h1>
-        Accident Happend in Banglore: latitude:{lat2} longitude:{lon2}
-      </h1>
-      <h1>distance:{dist}KMs</h1>
-      <h2>
-        We need to calculate distance between current users's location and every
-        accidents.Then we select police station or hospital based on nearest
-        distance.
-      </h2> */}
+      </div>
+      {/*Calling notification*/}
+      <div>
+        <button onClick={notify}>Notify!</button>
+        <ToastContainer />
+      </div>
+      <button onclick={play()}>Press Here!</button>
       <Footer />
     </div>
   );

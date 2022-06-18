@@ -59,7 +59,7 @@ const LoginPage = ({ history }) => {
         </div>
 
         <div className='signupbutton'>
-          Not a member? <Link to='/signup'>Signup</Link>
+          Not a member? <Link to='signup'>Signup</Link>
         </div>
       </form>
     </div>

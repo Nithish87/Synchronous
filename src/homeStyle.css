@@ -453,6 +453,17 @@ header section a {
   margin-bottom: 2%;
   width: 75%;
 }
+.event-Preview img{
+  width: 25%;
+  margin-top: 10px;
+  border-radius: 15px;
+  float: left;
+  width: 25%;
+}
+.event-Preview h2{
+  /* text-align: center; */
+  margin-left: 300px;
+}
 
 .viewButton{
   background-color: rgb(14, 7, 75);
@@ -465,4 +476,11 @@ header section a {
 
 .event-list{
   column-gap: 40px;
+}
+
+/*Search bar*/
+
+/*Notification*/
+.notification{
+  color: rgb(190, 29, 29);
 }
