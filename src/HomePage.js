@@ -17,6 +17,9 @@ import EventsList from "./EventsList";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
+import beep from "./Audio/beep.mp3";
+import { Howl, Howler } from 'howler';
+
 const HomePage = () => {
   const [user, setuser] = useState("");
   const { currentUser } = useContext(AuthContext);
@@ -25,7 +28,7 @@ const HomePage = () => {
   const lon2 = content[1].location.longitude;
   console.log(dist);
 
-  const {data:events,isPending,error}=useFetch('http://localhost:8000/events');
+  const { data: events, isPending, error } = useFetch('http://localhost:8000/events');
 
   //for getting current user details
   const getUsers = async () => {
@@ -72,37 +75,38 @@ const HomePage = () => {
   }, []);
 
   //Variable for notification
-  const notify = () => toast.error("Lorem ipsum dolor", {
+  const notify = () => {
+    toast.error("Lorem ipsum dolor", {
     theme: "colored"
-  })
-  //Sound
-  const play=()=> {
-    var audio = new Audio("../data/Audio/beep.mp3");
-    audio.play();
+  });
+  play();
 }
 
+  //Sound
+  function play() {   
+    var beepsound = new Audio(beep);   
+    beepsound.play();   
+}   
 
-  //const title="Events Nearby!";
-
-  return (
-    <div className='home'>
-      {/* <SearchBar /> */}
-      <div className="events">
-            {/* <h1><b>Events Nearby!</b></h1>
+return (
+  <div className='home'>
+    {/* <SearchBar /> */}
+    <div className="events">
+      {/* <h1><b>Events Nearby!</b></h1>
             <br></br> */}
-            {error && <div>{error}</div>}
-            {isPending && <div>Loading....</div>}
-            {events && <EventsList events={events} title="Events Nearby!"/>}
-      </div>
-      {/*Calling notification*/}
-      <div>
-        <button onClick={notify}>Notify!</button>
-        <ToastContainer />
-      </div>
-      <button onclick={play()}>Press Here!</button>
-      <Footer />
+      {error && <div>{error}</div>}
+      {isPending && <div>Loading....</div>}
+      {events && <EventsList events={events} title="Events Nearby!" />}
     </div>
-  );
+    {/*Calling notification*/}
+    <div>
+      <button onClick={notify}>Notify!</button>
+      <ToastContainer />
+    </div>
+    {/* <button onclick={play()}> Press Button </button>    */}
+    <Footer />
+  </div>
+);
 };
 
 export default HomePage;
