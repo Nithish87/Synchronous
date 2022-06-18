@@ -9,6 +9,7 @@
         "lattitude": 13.061152,
         "longitude": 74.995972
       },
+      "link": "https://goo.gl/maps/MT6NvfBYrHcWjxhu6",
       "id": 1
     },
     {
@@ -20,6 +21,7 @@
         "lattitude": 13.2103,
         "longitude": 74.972214
       },
+      "link": "https://goo.gl/maps/V68LPRenJGGVGfCn6",
       "id": 2
     },
     {
@@ -27,6 +29,7 @@
       "alt": "Accident",
       "title": "At Rounded Circle",
       "button": "View",
+      "link": "https://goo.gl/maps/TTaqVbVzwnFAWRqB7",
       "id": 3
     },
     {
@@ -34,6 +37,7 @@
       "alt": "Accident",
       "title": "Near Rich Mansion",
       "button": "View",
+      "link": "https://goo.gl/maps/j429za1fk3XFKgDq5",
       "id": 4
     },
     {
@@ -41,6 +45,7 @@
       "alt": "Accident",
       "title": "At not so safe right turn",
       "button": "View",
+      "link": "https://goo.gl/maps/janSY8ECbx86pwns6",
       "id": 5
     },
     {
@@ -48,6 +53,7 @@
       "alt": "Accident",
       "title": "Near Casual meeting place Cafe",
       "button": "View",
+      "link": "https://goo.gl/maps/WL2RT79G23XpZV5KA",
       "id": 6
     }
   ]
