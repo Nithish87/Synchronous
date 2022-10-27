@@ -7,13 +7,13 @@ import SignupPage from "./SignupPage";
 import HomePage from "./HomePage";
 import { AuthProvider } from "./backend/Auth";
 import PrivateRoute from "./backend/PrivateRoute.js";
+import NavbarSL from "./NavBarSL";
 
 function App() {
   return (
     <AuthProvider>
       <Router>
         <div className='App'>
-          <Navbar />
           <div className='content'>
             <Switch>
               <PrivateRoute exact path='/' component={HomePage} />
@@ -21,10 +21,12 @@ function App() {
                 <StartPage />
               </Route> */}
               <Route exact path='/login'>
+                <NavbarSL/>
                 <LoginPage />
               </Route>
 
               <Route exact path='/signup'>
+                <NavbarSL/>
                 <SignupPage />
               </Route>
             </Switch>

@@ -6,6 +6,15 @@
   color: #333;
 } */
 
+body{
+  background-image: url(../data/images/emergency2.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: '100vw';
+  height: '100vh';
+}
+
 .navbar{
   padding: 0.3%;
   display: flex;
@@ -55,10 +64,10 @@
 
 /*CSS for login page*/
 .loginTop{
-  background-image: url(../data/images/emergency2.jpg);
+  /* background-image: url(../data/images/emergency2.jpg);
   background-position: center;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: cover; */
   width: '100vw';
   height: '100vh';
   padding-top: 5%;
@@ -170,7 +179,8 @@
 
 /*CSS Signup page*/
 .signupTop{
-  background-image: url(../data/images/background6.jpeg);
+  /* background-image: url(../data/images/background6.jpeg); */
+  /* background-color: #535254; */
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;

@@ -27,9 +27,13 @@ const SignupPage = ({ history }) => {
     // console.log(latitude);
   };
 
+  //signup page load
+  const [signupState,setSignupState]=useState(false);
+
   const handleClick = () => {
     if (state == false) setState(true);
     else if (state == true) setState(false);
+    setSignupState(true);
   };
   const handleSignUp = async (event) => {
     event.preventDefault();
@@ -106,7 +110,7 @@ const SignupPage = ({ history }) => {
           )}
         </div>
 
-        <div className='txt'>
+        {signupState &&<div> <div className='txt'>
           <label>
             <b>Organisation Name:</b>
           </label>
@@ -174,13 +178,12 @@ const SignupPage = ({ history }) => {
             onChange={(e) => setCPassword(e.target.value)}
           />
         </div>
-
         {/* {!isPending && <button>Add blog</button>}
      {isPending && <button disabled>Adding</button>} */}
         <div className='signupB'>
           <button>Signup</button>
         </div>
-
+        </div>}
         <div className='signupbutton'>
           Already have an account?<Link to='/login'>Login</Link>
           <br></br>
@@ -188,6 +191,7 @@ const SignupPage = ({ history }) => {
         </div>
       </form >
     </div >
+   
   );
 };
 

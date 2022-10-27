@@ -1,6 +1,9 @@
 import Footer from "./Footer";
 import EventsMenu from "./EventsMenu";
 import SearchBar from "./SearchBar";
+import Navbar from "./Navbar";
+
+
 import useFetch from "./useFetch";
 import { db, auth } from "./backend/firebase-config";
 import { useContext, useEffect, useState } from "react";
@@ -90,7 +93,7 @@ const HomePage = () => {
 
 return (
   <div className='home'>
-    {/* <SearchBar /> */}
+    <Navbar />
     <div className="events">
       {/* <h1><b>Events Nearby!</b></h1>
             <br></br> */}
