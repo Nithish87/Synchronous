@@ -4,6 +4,10 @@ import { auth } from "./backend/firebase-config";
 import { useContext } from "react";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { AuthContext } from "./backend/Auth";
+import SyncAnimation from "./Animations/SyncAnimation";
+
+
+
 const LoginPage = ({ history }) => {
   const [Email, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -25,6 +29,9 @@ const LoginPage = ({ history }) => {
   }
   return (
     <div className='loginTop'>
+      <div className="websiteName">
+        <SyncAnimation />
+      </div>
       
       <form className="login" onSubmit={handleLogin}>
         <h2>Login:</h2>

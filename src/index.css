@@ -70,7 +70,7 @@ body {
   background-size: cover; */
   width: "100vw";
   height: "100vh";
-  padding-top: 5%;
+  padding-top: 0px;
   padding-bottom: 8%;
 }
 .login {
@@ -297,4 +297,11 @@ body {
 .search-input {
   font-size: 1.2em;
   width: 80%;
+}
+
+
+/*Company name*/
+.websiteName{
+  margin-top: 0px;
+  padding-top: 0px;
 }
