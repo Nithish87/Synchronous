@@ -1,13 +1,29 @@
 import Footer from "./Footer";
 import EventsMenu from "./EventsMenu";
 import SearchBar from "./SearchBar";
+import Navbar from "./Navbar";
+
 import useFetch from "./useFetch";
 import { db, auth } from "./backend/firebase-config";
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "./backend/Auth";
 import { getDatabase, ref, child, get } from "firebase/database";
 import content from "./data";
+
 import { getDistance, Geocode } from "geolib";
+
+import { useParams } from "react-router-dom/cjs/react-router-dom.min";
+
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faAngleRight, faLocationPin } from "@fortawesome/free-solid-svg-icons";
+import EventsList from "./EventsList";
+
+//Import for Notification
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
+import beep from "./Audio/beep.mp3";
+import { Howl, Howler } from "howler";
 
 const HomePage = () => {
   const range = 50;
@@ -24,7 +40,11 @@ const HomePage = () => {
     error,
   } = useFetch("http://localhost:8000/content");
 
+  //const { data: events, isPending, error } = useFetch('http://localhost:8000/events');
+
+  //for getting current user details
   const getUsers = async () => {
+    const dbRef = ref(db);
     await get(child(dbRef, `users/${currentUser.uid}`))
       .then((snapshot) => {
         if (snapshot.exists()) {
@@ -38,99 +58,64 @@ const HomePage = () => {
       });
   };
 
-  const calculateDistance = () => {
-    content.forEach((item) => {
-      var dis = getDistance(
-        {
-          latitude: user.location.latitude,
-          longitude: user.location.longitude,
-        },
-        {
-          latitude: item.location.lattitude,
-          longitude: item.location.longitude,
-        }
-      );
+  //calculation of distance
 
-      if (dis / 1000 < range) {
-        console.log(dis / 1000, range);
-        displayAccidents(item.location.lattitude, item.location.longitude);
-        const accident = {
-          url: item.link,
-          location: {
-            latitude: item.location.lattitude,
-            longitude: item.location.longitude,
-          },
-        };
-        // console.log(accident);
-        // //console.log(accidents);
-        // //const updatedAccidents = { ...accidents, ...accident };
-        // //console.log(updatedAccidents);
-        // const updatedAccidents = [...accidents];
-        // console.log(updatedAccidents);
-        // updatedAccidents.push(accident);
-        // setAccidents(updatedAccidents);
-        accidents.push(accident);
-      }
-    });
-    console.log(accidents);
-  };
-  const displayAccidents = (lat, long) => {
-    console.log(lat, long);
-    Geocode.fromLatLng(lat, long).then(
-      (response) => {
-        const address = response.results[0].formatted_address;
-        let city, state, country;
-        for (
-          let i = 0;
-          i < response.results[0].address_components.length;
-          i++
-        ) {
-          for (
-            let j = 0;
-            j < response.results[0].address_components[i].types.length;
-            j++
-          ) {
-            switch (response.results[0].address_components[i].types[j]) {
-              case "locality":
-                city = response.results[0].address_components[i].long_name;
-                break;
-              case "administrative_area_level_1":
-                state = response.results[0].address_components[i].long_name;
-                break;
-              case "country":
-                country = response.results[0].address_components[i].long_name;
-                break;
-            }
-          }
-        }
-        console.log(city, state, country);
-        console.log(address);
-      },
-      (error) => {
-        console.error(error);
-      }
-    );
+  const distance = (lat1, lat2, lon1, lon2) => {
+    lon1 = (lon1 * Math.PI) / 180;
+    lon2 = (lon2 * Math.PI) / 180;
+    lat1 = (lat1 * Math.PI) / 180;
+    lat2 = (lat2 * Math.PI) / 180;
+
+    let dlon = lon2 - lon1;
+    let dlat = lat2 - lat1;
+    let a =
+      Math.pow(Math.sin(dlat / 2), 2) +
+      Math.cos(lat1) * Math.cos(lat2) * Math.pow(Math.sin(dlon / 2), 2);
+    let c = 2 * Math.asin(Math.sqrt(a));
+    let r = 6371;
+    return Math.round(c * r);
   };
 
   useEffect(() => {
-    //getEvents();
-  }, []);
-  useEffect(() => {
+    console.log("hi");
     getUsers();
+    if (user) {
+      const lat1 = user.location.latitude;
+      const lon1 = user.location.longitude;
+      setdist(distance(lat1, lat2, lon1, lon2).toString());
+    }
   }, []);
-  useEffect(() => {
-    //calculateDistance();
-  }, []);
+
+  //Variable for notification
+  const notify = () => {
+    toast.error("Lorem ipsum dolor", {
+      theme: "colored",
+    });
+    play();
+  };
+
+  //Sound
+  function play() {
+    var beepsound = new Audio(beep);
+    beepsound.play();
+  }
+
   return (
     <div className='home'>
-      <SearchBar />
-      {/* <div className='events'>
+      <Navbar />
+      <div className='events'>
+        {/* <h1><b>Events Nearby!</b></h1>
+            <br></br> */}
         {error && <div>{error}</div>}
         {isPending && <div>Loading....</div>}
-        {events && <EventsList events={events} title='' />}
-      </div> */}
-      {}
-      <button onClick={calculateDistance}>getDistance</button>
+        {events && <EventsList events={events} title='Events Nearby!' />}
+      </div>
+      {/*Calling notification*/}
+      <div>
+        <button onClick={notify}>Notify!</button>
+        <ToastContainer />
+      </div>
+      {/* <button onclick={play()}> Press Button </button>    */}
       <Footer />
     </div>
   );

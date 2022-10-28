@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap");
 
 /* *{
   margin: 0;
@@ -6,8 +6,17 @@
   color: #333;
 } */
 
-.navbar{
-  padding: 10px;
+body {
+  background-image: url(../data/images/emergency2.jpg);
+  /* background-position: center; */
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: "100vw";
+  height: "100vh";
+}
+
+.navbar {
+  padding: 0.3%;
   display: flex;
   align-items: center;
   max-width: 100%;
@@ -16,27 +25,27 @@
   margin-right: 0;
   background-color: #282362;
 }
-.navbar h1{
+.navbar h1 {
   color: white;
   font-size: 50px;
 }
-.navbar .links{
+.navbar .links {
   margin-left: 60%;
 }
-.navbar a{
+.navbar a {
   margin-left: 16px;
   text-decoration: none;
   padding: 6px;
   color: white;
 }
-.navbar a:hover{
+.navbar a:hover {
   color: #f1356d;
 }
 
-.userProfile{
+.userProfile {
   background-color: #535254;
 }
-.profile{
+.profile {
   position: absolute;
   top: 13%;
   background-color: rgba(102, 103, 105, 0.4);
@@ -44,23 +53,23 @@
   border-radius: 5px;
   right: 2%;
   padding: 10px;
-  line-height: 2.0;
+  line-height: 2;
 }
 
-.content{
+.content {
   height: 100%;
   width: 100%;
   margin-top: 0;
 }
 
 /*CSS for login page*/
-.loginTop{
-  background-image: url(../data/images/emergency2.jpg);
+.loginTop {
+  /* background-image: url(../data/images/emergency2.jpg);
   background-position: center;
   background-repeat: no-repeat;
-  background-size: cover;
-  width: '100vw';
-  height: '100vh';
+  background-size: cover; */
+  width: "100vw";
+  height: "100vh";
   padding-top: 5%;
   padding-bottom: 8%;
 }
@@ -70,7 +79,7 @@
   margin-top: 4%;
   text-align: center;
   width: 350px;
-  background: rgb(148, 162, 190,0.8);
+  background: rgb(148, 162, 190, 0.8);
   border-radius: 10px;
   padding-top: 1px;
   padding-bottom: 1px;
@@ -85,7 +94,7 @@
   color: #0c0330;
   margin-bottom: 30px;
 }
-.login input{
+.login input {
   width: 93%;
   padding: 6px 10px;
   margin: 10px 10px;
@@ -102,8 +111,7 @@
   cursor: pointer;
 }
 
-
-.signupbutton{
+.signupbutton {
   margin-top: 15px;
   margin-bottom: 10px;
   text-align: center;
@@ -111,43 +119,44 @@
   color: black;
 }
 
-.signupbutton a{
+.signupbutton a {
   color: #e9e4e4;
   text-decoration: none;
 }
 
-.signupbutton a:hover{
+.signupbutton a:hover {
   text-decoration: underline;
 }
 
 /* CSS for Start page*/
-.start{
+.start {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%, -50%);
   background-color: #0c0330;
   height: 170px;
   width: 200px;
   text-align: center;
   padding: 10px;
-}                                                          
-.start h2{
+}
+.start h2 {
   font-size: 25px;
   color: white;
 }
-.choices button{
+.choices button {
   width: 90%;
   height: 50px;
   padding-bottom: 10%;
 }
-#police{
+#police {
   background-color: lightblue;
 }
-#medic{
+#medic {
   background-color: lightgreen;
 }
-#police:hover,#medic:hover{
+#police:hover,
+#medic:hover {
   background-color: wheat;
 }
 
@@ -160,7 +169,7 @@
   margin-left: 10px;
   margin-right: 5px;
 }
-#map{
+#map {
   height: 180px;
 }
 
@@ -169,13 +178,14 @@
 } */
 
 /*CSS Signup page*/
-.signupTop{
-  background-image: url(../data/images/background6.jpeg);
+.signupTop {
+  /* background-image: url(../data/images/background6.jpeg); */
+  /* background-color: #535254; */
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  width: '100vw';
-  height: '100vh';
+  width: "100vw";
+  height: "100vh";
   padding-top: 1%;
   padding-bottom: 3%;
 }
@@ -185,7 +195,7 @@
   margin: 0 auto;
   text-align: center;
   width: 50%;
-  background: rgb(126, 173, 227,0.5);
+  background: rgb(126, 173, 227, 0.5);
   border-radius: 10px;
   margin-top: 3%;
   padding-top: 10px;
@@ -193,7 +203,7 @@
   /* padding-bottom: 2%; */
 }
 
-.signup label{
+.signup label {
   color: #0c0330;
 }
 
@@ -207,7 +217,7 @@
   color: #0c0330;
   margin-bottom: 30px;
 }
-.signup input{
+.signup input {
   width: 100%;
   padding: 10px 10px;
   margin: 0px 0px;
@@ -219,16 +229,16 @@
   background-color: white;
 }
 
-.txt input{
+.txt input {
   width: 95%;
   padding: 6px 10px;
   margin: 10px 10px;
   border: 1px solid #ddd;
   box-sizing: border-box;
-  display: block; 
+  display: block;
 }
 
-.signinButton button{
+.signinButton button {
   padding: 5px;
   text-align: center;
   background-color: black;
@@ -238,7 +248,7 @@
   margin-bottom: 10px;
 }
 
-.signupB button{
+.signupB button {
   background: #0c0330;
   color: #fff;
   border: 0;
@@ -248,14 +258,14 @@
 }
 
 /*CSS for Dropdown menu*/
-.dropDownButton{
+.dropDownButton {
   background-color: rgb(5, 31, 61);
   color: white;
   border-radius: 5px;
   width: 50%;
 }
 
-.dropdown-menu{
+.dropdown-menu {
   list-style: none;
   /* display: flex; */
   /* align-items: center;

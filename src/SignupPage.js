@@ -6,7 +6,7 @@ import Search from "./Search";
 import { auth, db } from "./backend/firebase-config";
 import { createUserWithEmailAndPassword, deleteUser } from "firebase/auth";
 import { ref, set } from "firebase/database";
-import MyGoogleMap from "./MyGoogleMap";
+import MyGoogleMap from './MyGoogleMap';
 
 const SignupPage = ({ history }) => {
   const [name, setName] = useState("");
@@ -27,9 +27,13 @@ const SignupPage = ({ history }) => {
     // console.log(latitude);
   };
 
+  //signup page load
+  const [signupState,setSignupState]=useState(false);
+
   const handleClick = () => {
     if (state == false) setState(true);
     else if (state == true) setState(false);
+    setSignupState(true);
   };
   const handleSignUp = async (event) => {
     event.preventDefault();
@@ -49,7 +53,6 @@ const SignupPage = ({ history }) => {
           phoneNo: phone,
         })
           .then(() => {
-            console.log("/ pushed");
             history.push("/");
           })
           .catch((error) => {
@@ -66,7 +69,8 @@ const SignupPage = ({ history }) => {
 
   return (
     <div className='signupTop'>
-      <form className='signup' onSubmit={handleSignUp}>
+
+      <form className="signup" onSubmit={handleSignUp}>
         <h2>Signup:</h2>
         {Error ? Error : ""}
         <div class='organisationType'>
@@ -106,7 +110,7 @@ const SignupPage = ({ history }) => {
           )}
         </div>
 
-        <div className='txt'>
+        {signupState &&<div> <div className='txt'>
           <label>
             <b>Organisation Name:</b>
           </label>
@@ -174,20 +178,20 @@ const SignupPage = ({ history }) => {
             onChange={(e) => setCPassword(e.target.value)}
           />
         </div>
-
         {/* {!isPending && <button>Add blog</button>}
      {isPending && <button disabled>Adding</button>} */}
         <div className='signupB'>
           <button>Signup</button>
         </div>
-
+        </div>}
         <div className='signupbutton'>
           Already have an account?<Link to='/login'>Login</Link>
           <br></br>
           <br></br>
         </div>
-      </form>
-    </div>
+      </form >
+    </div >
+   
   );
 };
 

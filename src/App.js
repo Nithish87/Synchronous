@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Navbar from "./Navbar";
 import LoginPage from "./LoginPage";
@@ -7,14 +7,13 @@ import SignupPage from "./SignupPage";
 import HomePage from "./HomePage";
 import { AuthProvider } from "./backend/Auth";
 import PrivateRoute from "./backend/PrivateRoute.js";
-import EventPage from "./EventPage";
+import NavbarSL from "./NavBarSL";
 
 function App() {
   return (
     <AuthProvider>
       <Router>
         <div className='App'>
-          <Navbar />
           <div className='content'>
             <Switch>
               <PrivateRoute exact path='/' component={HomePage} />
@@ -22,15 +21,13 @@ function App() {
                 <StartPage />
               </Route> */}
               <Route exact path='/login'>
+                {/* <NavbarSL/> */}
                 <LoginPage />
               </Route>
 
               <Route exact path='/signup'>
+                <NavbarSL />
                 <SignupPage />
-              </Route>
-
-              <Route exact path='/view/:id'>
-                <EventPage/>
               </Route>
             </Switch>
           </div>
