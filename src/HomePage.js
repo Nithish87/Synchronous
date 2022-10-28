@@ -7,13 +7,10 @@ import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "./backend/Auth";
 import { getDatabase, ref, child, get } from "firebase/database";
 import content from "./data";
-import { useParams } from "react-router-dom/cjs/react-router-dom.min";
-
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faAngleRight } from '@fortawesome/free-solid-svg-icons';
-import EventsList from "./EventsList";
+import { getDistance, Geocode } from "geolib";
 
 const HomePage = () => {
+  const range = 50;
   const [user, setuser] = useState("");
   const { currentUser } = useContext(AuthContext);
   const [dist, setdist] = useState("");
@@ -21,7 +18,11 @@ const HomePage = () => {
   const lon2 = content[1].location.longitude;
   console.log(dist);
 
-  const {data:events,isPending,error}=useFetch('http://localhost:8000/content');
+  const {
+    data: events,
+    isPending,
+    error,
+  } = useFetch("http://localhost:8000/content");
 
   const getUsers = async () => {
     await get(child(dbRef, `users/${currentUser.uid}`))
