@@ -8,6 +8,7 @@ import HomePage from "./HomePage";
 import { AuthProvider } from "./backend/Auth";
 import PrivateRoute from "./backend/PrivateRoute.js";
 import NavbarSL from "./NavBarSL";
+import Login from "./Login";
 
 function App() {
   return (
@@ -22,7 +23,7 @@ function App() {
               </Route> */}
               <Route exact path='/login'>
                 {/* <NavbarSL/> */}
-                <LoginPage />
+                <Login/>
               </Route>
 
               <Route exact path='/signup'>

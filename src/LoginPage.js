@@ -65,6 +65,10 @@ const LoginPage = ({ history }) => {
           <button type='submit'>Login</button>
         </div>
 
+        <div className="forgotPassword">
+          Forgot Password?
+        </div>
+
         <div className='signupbutton'>
           Not a member? <Link to='signup'>Signup</Link>
         </div>
