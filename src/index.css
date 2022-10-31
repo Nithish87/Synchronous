@@ -100,7 +100,7 @@ figure figcaption{
 
 .txt_field input{
   margin-top: 5px;
-  width: 50%;
+  width: 60%;
 }
 .txt_field:first-of-type{
   margin-bottom: 20px;
@@ -125,14 +125,14 @@ figure figcaption{
 }
 .loginButton{
   text-align: center;
-  width: 51%;
+  width: 60%;
   background-color: #282362;
   color: white;
   height: 30px;
   border-radius: 5px;
 }
 
-.createAccount{
+.linkToSignup{
   text-align: center;
   margin-top: 30px;
 }
@@ -144,6 +144,49 @@ figure figcaption{
 
 
 /*CSS for Sigup page */
+.signup{
+  /* background-color: #98d9a9; */
+  overflow: hidden;
+}
+
+.signupForm{
+  margin-left: 6%;
+}
+
+.createAccount{
+  text-align: center;
+  margin-top: 2%;
+  margin-bottom: 10px;
+  font-size: 30px;
+  font-family: 'IM Fell Great Primer', serif;
+}
+
+.signup_field input{
+  width: 35%;
+  margin-top: 4px;
+  margin-bottom: 5px;
+}
+
+#butt{
+  width: 82% !important;
+}
+#drop{
+  margin-left: 11%;
+  margin-bottom: 20px;
+  width: 15%;
+}
+
+.signupButton{
+  text-align: center;
+  width: 33%;
+  background-color: #282362;
+  color: white;
+  height: 30px;
+  border-radius: 5px;
+  margin-top: 10px;
+  margin-left: 15px;
+}
+
 /* CSS for map*/
 .leaflet-container {
   width: 97%;
@@ -156,110 +199,8 @@ figure figcaption{
   height: 180px;
 }
 
-/* .searchButton{
-  margin-right: 200px;
-} */
 
-/*CSS Signup page*/
-.signupTop {
-  /* background-image: url(../data/images/background6.jpeg); */
-  /* background-color: #535254; */
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  width: "100vw";
-  height: "100vh";
-  padding-top: 1%;
-  padding-bottom: 3%;
-}
 
-.signup {
-  /* max-width: 500px; */
-  margin: 0 auto;
-  text-align: center;
-  width: 50%;
-  background: rgb(126, 173, 227, 0.5);
-  border-radius: 10px;
-  margin-top: 3%;
-  padding-top: 10px;
-  padding-left: 5px;
-  /* padding-bottom: 2%; */
-}
-
-.signup label {
-  color: #0c0330;
-}
-
-.signup label {
-  text-align: left;
-  display: block;
-  margin: 10px 10px;
-}
-.signup h2 {
-  font-size: 25px;
-  color: #0c0330;
-  margin-bottom: 30px;
-}
-.signup input {
-  width: 100%;
-  padding: 10px 10px;
-  margin: 0px 0px;
-  border: 5px solid rgb(238, 232, 232);
-  color: rgb(10, 1, 1);
-  box-sizing: border-box;
-  border-radius: 5px;
-  display: block;
-  background-color: white;
-}
-
-.txt input {
-  width: 95%;
-  padding: 6px 10px;
-  margin: 10px 10px;
-  border: 1px solid #ddd;
-  box-sizing: border-box;
-  display: block;
-}
-
-.signinButton button {
-  padding: 5px;
-  text-align: center;
-  background-color: black;
-  color: white;
-  border-radius: 5px;
-  width: 100px;
-  margin-bottom: 10px;
-}
-
-.signupB button {
-  background: #0c0330;
-  color: #fff;
-  border: 0;
-  padding: 8px;
-  border-radius: 8px;
-  cursor: pointer;
-}
-
-/*CSS for Dropdown menu*/
-.dropDownButton {
-  background-color: rgb(5, 31, 61);
-  color: white;
-  border-radius: 5px;
-  width: 50%;
-}
-
-.dropdown-menu {
-  list-style: none;
-  /* display: flex; */
-  /* align-items: center;
-  justify-content: center; */
-  margin-left: 25%;
-  margin-right: 25%;
-  background-color: white;
-  width: 50%;
-  padding-left: 0;
-  border-radius: 5px;
-}
 
 /*Google maps CSS*/
 .main-wrapper {
@@ -291,5 +232,8 @@ figure figcaption{
 
   font-size: 46px;
   font-family: 'Poppins', sans-serif;
-  color: rgb(233, 101, 121);  
+  color: rgb(7, 5, 61);  
 }
+
+
+/*Map*/

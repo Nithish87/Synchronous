@@ -1,14 +1,15 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Navbar from "./Navbar";
-import LoginPage from "./LoginPage";
-import StartPage from "./StartPage";
-import SignupPage from "./SignupPage";
 import HomePage from "./HomePage";
 import { AuthProvider } from "./backend/Auth";
 import PrivateRoute from "./backend/PrivateRoute.js";
-import NavbarSL from "./NavBarSL";
 import Login from "./Login";
+// import Signup from "./Signup";
+import SignupPage from "./SignupPage";
+import Signup from "./Signup";
+
+
 
 function App() {
   return (
@@ -27,8 +28,7 @@ function App() {
               </Route>
 
               <Route exact path='/signup'>
-                <NavbarSL />
-                <SignupPage />
+                <Signup/>
               </Route>
             </Switch>
           </div>

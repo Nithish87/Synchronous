@@ -14,34 +14,40 @@ const params = {
   addressdetails: "addressdetails",
 };
 
-export default function Search({handleChange}) {
+export default function Search({ handleChange }) {
   //const { selectPosition, setSelectPosition } = props;
   const [searchText, setSearchText] = useState("");
   const [listPlace, setListPlace] = useState([]);
 
-  const [latitude,setLatitude]=useState("");
-  const [longitude,setLongitude]=useState("");
-    
+  const [latitude, setLatitude] = useState("");
+  const [longitude, setLongitude] = useState("");
 
-    const onTrigger=()=>{
-        handleChange(latitude,longitude);
-    }
 
-    // const handleChange=(lat,lon)=>{
-    //     setLatitude(lat);
-    //     setLongitude(lon);
-    //     // console.log(latitude);
-    //     onTrigger(latitude,longitude);
-    // }
+  const onTrigger = () => {
+    handleChange(latitude, longitude);
+  }
+
+  // const handleChange=(lat,lon)=>{
+  //     setLatitude(lat);
+  //     setLongitude(lon);
+  //     // console.log(latitude);
+  //     onTrigger(latitude,longitude);
+  // }
+
+  const locationStyle = {
+    width: "95%",
+    height: "100%",
+  }
+  
 
 
 
   return (
     <div style={{ display: "flex", flexDirection: "column" }}>
-      <div style={{ display: "flex", marginLeft: "10px" }}>
+      <div id="butt" style={{ display: "flex"}}>
         <div style={{ flex: 1 }}>
-          <OutlinedInput 
-            style={{ width: "100%"}}
+          <input
+            style={locationStyle}
             value={searchText}
             onChange={(event) => {
               setSearchText(event.target.value);
@@ -49,7 +55,7 @@ export default function Search({handleChange}) {
           />
         </div>
         <div id="searchButton"
-          style={{ display: "flex", alignItems: "center", padding: "0px 20px"}}
+        style={{ display: "flex", alignItems: "center", padding: "0px 0px" , marginLeft: "0px"}}
         >
           <Button
             variant="contained"
@@ -79,6 +85,7 @@ export default function Search({handleChange}) {
             Search
           </Button>
         </div>
+        
       </div>
       <div>
         <List component="nav" aria-label="main mailbox folders">
@@ -93,7 +100,7 @@ export default function Search({handleChange}) {
                     //   console.log(item.lon);
                     // setSelectPosition(item);
                     console.log("Hello");
-                    handleChange(item.lat,item.lon);
+                    handleChange(item.lat, item.lon);
                     // console.log(latitude);
                     // console.log(longitude);
                     // onTrigger(latitude,longitude);

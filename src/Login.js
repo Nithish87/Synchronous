@@ -110,7 +110,7 @@ const Login = ({ history }) => {
                     </div>
                 </form>
 
-                <div className='createAccount'>
+                <div className='linkToSignup'>
                     Not a member? <Link to='signup'>Signup</Link>
                 </div>
 
