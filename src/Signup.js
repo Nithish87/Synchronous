@@ -133,7 +133,7 @@ const Signup = ({ history }) => {
 
                 <div className='signup_field'>
                     <label>
-                        <b>Email:{email}</b>
+                        <b>Email:</b>
                     </label>
                     <br></br>
                     <input
