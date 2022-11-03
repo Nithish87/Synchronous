@@ -17,7 +17,7 @@ const Login = ({ history }) => {
     const [password, setPassword] = useState("");
 
     //Profile for google
-    const { profile, setProfile } = useState(null);
+    const [profile, setProfile ] = useState([]);
 
     useEffect(() => {
         const initClient = () => {
@@ -132,6 +132,8 @@ const Login = ({ history }) => {
                     />
                 </div>
             </div>
+
+            <GoogleLogout className='logoutG' clientID={clientID} buttonText="Log out" onLogoutSuccess={logout} />
         </>
     );
 }
