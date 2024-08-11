@@ -12,8 +12,6 @@ import content from "./data";
 
 import { getDistance, Geocode } from "geolib";
 
-import { useParams } from "react-router-dom/cjs/react-router-dom.min";
-
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleRight, faLocationPin } from "@fortawesome/free-solid-svg-icons";
 import EventsList from "./EventsList";
@@ -24,6 +22,9 @@ import "react-toastify/dist/ReactToastify.css";
 
 import beep from "./Audio/beep.mp3";
 import { Howl, Howler } from "howler";
+import CarouselComponent from "./CarouselComponent";
+import HomeCard from "./HomeCard";
+
 
 const HomePage = () => {
   const range = 50;
@@ -77,7 +78,7 @@ const HomePage = () => {
   };
 
   useEffect(() => {
-    console.log("hi");
+ 
     getUsers();
     if (user) {
       const lat1 = user.location.latitude;
@@ -102,21 +103,24 @@ const HomePage = () => {
 
   return (
     <div className='home'>
-      <Navbar />
-      <div className='events'>
-        {/* <h1><b>Events Nearby!</b></h1>
-            <br></br> */}
+ 
+      {/* <div className='events'>
+       
         {error && <div>{error}</div>}
         {isPending && <div>Loading....</div>}
         {events && <EventsList events={events} title='Events Nearby!' />}
-      </div>
-      {/*Calling notification*/}
+      </div> */}
+{/*     
       <div>
         <button onClick={notify}>Notify!</button>
         <ToastContainer />
-      </div>
+      </div> */}
       {/* <button onclick={play()}> Press Button </button>    */}
-      <Footer />
+      <div>
+  
+        <CarouselComponent/>
+      </div>
+     
     </div>
   );
 };

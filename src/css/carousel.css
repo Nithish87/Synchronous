@@ -1,0 +1,19 @@
+.carousel-container{
+    display: flex;
+
+    
+    flex-direction: column;
+    padding: 10px;
+}
+.welcome-message{
+    background-color: yellow;
+    color: black;
+    font-weight: bold;
+    font-size: larger;
+    height: 30px;
+    width:550px;
+    border-radius: 10px;
+    text-align: center;
+    
+
+}

@@ -1,0 +1,23 @@
+.navbar{
+
+  height: 20%;
+
+}
+.nav-text-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+
+}
+.nav-text{
+    padding-left: 10px;
+}
+.bg-myColor {
+background-color: rgb(14, 7, 75);
+}
+.profile{
+    background-color: yellow;
+    color: black;
+    font-weight: bold;
+}
